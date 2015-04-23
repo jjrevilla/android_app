@@ -1,7 +1,7 @@
 from django.db import models
 
-
 class Articulo(models.Model):
+    id = models.IntegerField(primary_key=True, max_length=5)
     articulo = models.TextField(max_length=20)
     stock = models.IntegerField()
     costo = models.FloatField(max_length=10)
@@ -15,6 +15,7 @@ class Articulo(models.Model):
 
 
 class Pedido(models.Model):
+    id = models.IntegerField(primary_key=True, max_length=5)
     codigo_articulo = models.ForeignKey(Articulo)
     cantidad = models.IntegerField()
     costo = models.FloatField(max_length=10)
